@@ -30,7 +30,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: $bodytext;
-  font-weight: 300;
+  font-weight: 400;
   background: $inverse;
 }
 
@@ -975,7 +975,11 @@ Mat card
   &.text-white {
     small {
       color: rgba(255, 255, 255, 0.7) !important;
-     }
+    }
+  }
+
+  .mat-card-subtitle {
+    font-weight: 400;
   }
 
   .mat-card-content {
@@ -999,6 +1003,7 @@ Mat card
       margin-bottom: 0px;
       margin-top: 0px;
       font-size: 14px;
+      font-weight: 400;
     }
     &.text-white {
       .mat-card-title {
@@ -1115,6 +1120,10 @@ ul.list-style-none {
 }
 
 .page-breadcrumb {
+  .page-container {
+    max-width: $page-wrapper-boxed-width;
+    margin: 0 auto;
+  }
   .breadcrumb {
     padding: 0px;
     margin: 0px;
@@ -1126,7 +1135,7 @@ ul.list-style-none {
       padding-right: 0.5rem;
     }
     .breadcrumb-item + .breadcrumb-item::before {
-      content: "\e649";
+      content: '\e649';
       font-family: themify;
       color: $sidebar-icons;
       font-size: 11px;
@@ -1169,21 +1178,18 @@ ul.list-style-none {
   stroke: rgba(0, 0, 0, 0.1);
 }
 .todo-toggle {
-    position: absolute !important;
-    z-index: 9;
-    left: -5px;
-  }
+  position: absolute !important;
+  z-index: 9;
+  left: -5px;
+}
 
 @media (min-width: 768px) {
   .d-md-flex {
     display: flex;
   }
-
-  
 }
 
 @media (max-width: 767px) {
-  
 }
 
 .input-file-button {
@@ -1193,4 +1199,3 @@ ul.list-style-none {
     color: white;
   }
 }
-

@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.scss']
+  styleUrls: ['./stepper.component.scss'],
 })
 export class StepperComponent implements OnInit {
   isLinear = false;
@@ -13,14 +13,15 @@ export class StepperComponent implements OnInit {
   isOptional = false;
   isEditable = false;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  // tslint:disable-next-line - Disables all
+  constructor(private _formBuilder: FormBuilder) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      secondCtrl: ['', Validators.required],
     });
   }
 }

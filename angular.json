@@ -20,14 +20,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": [              
+            "allowedCommonJsDependencies": [
               "c3",
               "rxjs",
               "date-fns",
               "rxjs-compat",
               "angular-calendar",
               "chart.js",
-              "@mattlewis92/dom-autoscroller"              
+              "@mattlewis92/dom-autoscroller",
+              "ngx-quill"
             ],
             "outputPath": "dist/project",
             "index": "src/index.html",
@@ -41,8 +42,16 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/chartist/dist/chartist.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/quill/dist/quill.bubble.css",
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "node_modules/dragula/dist/dragula.css",
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "node_modules/@swimlane/ngx-datatable/index.css",
+              "node_modules/@swimlane/ngx-datatable/themes/material.css",
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
               "src/assets/styles/style.scss"
-              
             ],
             "scripts": []
           },
@@ -51,13 +60,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 }
               ],
               "fileReplacements": [
@@ -114,9 +123,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "project"
+  "defaultProject": "project",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

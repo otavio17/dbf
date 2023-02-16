@@ -1,16 +1,9 @@
-import {
-  Directive,
-  HostBinding,
-  Inject,
-  Input,
-  OnInit,
-  OnDestroy
-} from '@angular/core';
+import { Directive, HostBinding, Inject, Input, OnInit, OnDestroy } from '@angular/core';
 
 import { AccordionDirective } from './accordion.directive';
 
 @Directive({
-  selector: '[appAccordionLink]'
+  selector: '[appAccordionLink]',
 })
 export class AccordionLinkDirective implements OnInit, OnDestroy {
   @Input()
@@ -29,6 +22,7 @@ export class AccordionLinkDirective implements OnInit, OnDestroy {
     }
   }
 
+  // tslint:disable-next-line - Disables all
   protected _selected = false;
   protected nav: AccordionDirective;
 

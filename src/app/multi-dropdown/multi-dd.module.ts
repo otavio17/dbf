@@ -8,12 +8,7 @@ import { ThirdLevelComponent } from './third-level/third-level.component';
 import { MultiRoutes } from './multi-dd.routing';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DemoMaterialModule,
-    FlexLayoutModule,
-    RouterModule.forChild(MultiRoutes)
-  ],
-  declarations: [SecondLevelComponent, ThirdLevelComponent]
+  imports: [CommonModule, DemoMaterialModule, FlexLayoutModule, RouterModule.forChild(MultiRoutes)],
+  declarations: [SecondLevelComponent, ThirdLevelComponent],
 })
 export class MultiModule {}

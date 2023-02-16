@@ -4,7 +4,7 @@ import { coerceNumberProperty } from '@angular/cdk/coercion';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.scss']
+  styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent {
   demo = 0;
@@ -21,13 +21,14 @@ export class SliderComponent {
   thumbLabel = false;
   value = 0;
   vertical = false;
-
+  // tslint:disable-next-line - Disables all
+  private _tickInterval = 1;
   get tickInterval(): number | 'auto' {
     return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : 0;
   }
   set tickInterval(value) {
     this._tickInterval = coerceNumberProperty(value);
   }
-  private _tickInterval = 1;
-  constructor() { }
+
+  constructor() {}
 }

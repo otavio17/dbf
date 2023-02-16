@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
+  styleUrls: ['./grid.component.scss'],
 })
 export class GridComponent {
   tiles = [
@@ -11,25 +11,25 @@ export class GridComponent {
       text: 'One',
       cols: 3,
       rows: 1,
-      color: 'lightblue'
+      color: 'lightblue',
     },
     {
       text: 'Two',
       cols: 1,
       rows: 2,
-      color: 'lightgreen'
+      color: 'lightgreen',
     },
     {
       text: 'Three',
       cols: 1,
       rows: 1,
-      color: 'lightpink'
+      color: 'lightpink',
     },
     {
       text: 'Four',
       cols: 2,
       rows: 1,
-      color: '#DDBDF1'
-    }
+      color: '#DDBDF1',
+    },
   ];
 }

@@ -2,7 +2,6 @@ import { AlertService } from 'src/app/services/alert.service';
 import { AccountService } from './../services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
-import { MyserviceService } from './../myservice.service';
 
 import {
   FormBuilder,
@@ -44,7 +43,7 @@ export class LoginComponent implements OnInit {
             //  this.alertService.success("", true);
               console.log("teste sucesso "+JSON.stringify(data));
     
-              this.routes.navigate(['/starter']);
+              this.routes.navigate(['/dashboards/dashboard2']);
             },
             error => {
               console.log("teste  erro= "+JSON.stringify(error)+"");

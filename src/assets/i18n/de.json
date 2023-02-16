@@ -4,6 +4,7 @@
   "Dashboard 1": "Instrumententafel 1",
   "Dashboard 2": "Instrumententafel 2",
 
+
   "Material Ui": "Material Ui",
   "Badge": "Abzeichen",
   "Buttons": "Tasten",
@@ -24,7 +25,6 @@
   "Tooltip": "Tooltip",
   "Snackbar": "Imbissbude",
   "Slider": "Schieberegler",
-  "Starter Page": "Startseite",
   "Slide Toggle": "Slide Toggle",
 
   "Apps": "Apps",
@@ -67,11 +67,13 @@
   "Sortable Table": "Sortierbare Tabelle",
   "Mix Table": "Tabelle mischen",
 
+
   "Dynamic Table": "Dynamische Tabelle",
   "Expand Table": "Tabelle erweitern",
   "Footer row Table": "Fußzeilentabelle",
   "Multiple Header Footer": "  Fußzeile mit mehreren Kopfzeilen",
   "HTTP Table": "HTTP-Tabelle",
+
 
   "Row Context Table": "Zeilenkontexttabelle",
   "Selection Table": "Auswahltabelle",

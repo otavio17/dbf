@@ -1,14 +1,3 @@
-/*
-Template Name: Material Pro Admin
-Author: Wrappixel
-Email: niravjoshi87@gmail.com
-File: scss
-*/
-
-/*============================================================== 
- For all pages 
- ============================================================== */
-
 /*******************
  Main container
 *******************/
@@ -34,9 +23,22 @@ File: scss
 
 html .page-wrapper {
   height: calc(100vh - 64px);
-
+  overflow: hidden;
   .page-content {
     padding: 15px;
+    
+  }
+  .page-container {
+    max-width: $page-wrapper-boxed-width;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1700px) {
+  .page-wrapper {
+    .page-content {
+      margin: 0 -30px;      
+    }
   }
 }
 
@@ -570,7 +572,7 @@ Overall Responsive table
   }
 
   .mat-drawer-content {
-    height: calc(100vh - 190px) !important;
+    height: calc(100vh - 186px) !important;
   }
 
   &.mat-card .mat-card-content {

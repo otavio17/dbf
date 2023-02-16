@@ -6,7 +6,7 @@ File: scss
 */
 
 html body {
-  [dir="rtl"] {
+  [dir='rtl'] {
     .p-l-0 {
       padding-right: 0px;
       padding-left: unset;
@@ -112,9 +112,9 @@ html body {
       float: right !important;
     }
 
-    @media (max-width: 767px){ 
+    @media (max-width: 767px) {
       .float-sm-left.float-right {
-          float: right !important;
+        float: right !important;
       }
     }
 
@@ -128,14 +128,14 @@ html body {
 
     // breakcrumb
     .page-breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::after {
-      content: "\e649";
+      content: '\e649';
       font-family: themify;
       color: #99abb4;
       font-size: 11px;
       padding-right: 0.5rem;
     }
     .page-breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
-      content: "\e649";
+      content: '\e649';
       display: none;
     }
 
@@ -191,7 +191,7 @@ html body {
     }
     @media (min-width: 1024px) {
       #snav.mat-sidenav ~ .mat-drawer-content {
-        margin-left: 0 !important; 
+        margin-left: 0 !important;
       }
     }
 
@@ -210,8 +210,12 @@ html body {
       margin-left: 10px;
     }
 
-    .employee-list td.mat-cell, .employee-list td.mat-footer-cell, .employee-list th.mat-header-cell,
-    .ticket-list td.mat-cell, .ticket-list td.mat-footer-cell, .ticket-list th.mat-header-cell {
+    .employee-list td.mat-cell,
+    .employee-list td.mat-footer-cell,
+    .employee-list th.mat-header-cell,
+    .ticket-list td.mat-cell,
+    .ticket-list td.mat-footer-cell,
+    .ticket-list th.mat-header-cell {
       text-align: right;
     }
 
@@ -220,5 +224,4 @@ html body {
       margin-left: unset !important;
     }
   }
-  
 }

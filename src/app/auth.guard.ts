@@ -31,7 +31,7 @@ export class AuthGuard implements CanActivate {
      console.log("starter = " +localStorage.getItem('username'));
    
    if(path?.includes('login')){
-    this.routes.navigate(['/starter']);
+    this.routes.navigate(['/dashboards/dashboard1']);
    }
       return true;
     } else {
@@ -43,7 +43,7 @@ export class AuthGuard implements CanActivate {
        }else {
         this.routes.navigate(['/login']);
          return false;
-       console.log("login C");
+
        }
     
     }

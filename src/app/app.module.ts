@@ -2,8 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 
@@ -17,37 +18,39 @@ import { HorizontalAppHeaderComponent } from './layouts/full/horizontal-header/h
 import { HorizontalAppSidebarComponent } from './layouts/full/horizontal-sidebar/horizontal-sidebar.component';
 
 import { AppBreadcrumbComponent } from './layouts/full/breadcrumb/breadcrumb.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './demo-material-module';
-
-import { LoginComponent } from './login/login.component';  
-import { AuthGuard } from './auth.guard';
-
-import { SharedModule } from './shared/shared.module';
-import { SpinnerComponent } from './shared/spinner.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { mailService, mailGlobalVariable } from './apps/mailbox/mail.service';
+import { SharedModule } from './shared/shared.module';
+import { SpinnerComponent } from './shared/spinner.component';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AlertService } from './services/alert.service';
+import { AccountService } from './services/account.service';
+import { LoginComponent } from './login/login.component';
 
-
-export function HttpLoaderFactory(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
-  wheelPropagation: true
+  wheelPropagation: true,
 };
 
 @NgModule({
   declarations: [
     AppComponent,
     FullComponent,
+    LoginComponent,
     VerticalAppHeaderComponent,
     SpinnerComponent,
     AppBlankComponent,
@@ -55,7 +58,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AppBreadcrumbComponent,
     HorizontalAppHeaderComponent,
     HorizontalAppSidebarComponent,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -63,27 +65,31 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     DemoMaterialModule,
     FormsModule,
     FlexLayoutModule,
-    PerfectScrollbarModule,
     HttpClientModule,
+    PerfectScrollbarModule,
     SharedModule,
-    RouterModule.forRoot(AppRoutes),
-    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    RouterModule.forRoot(AppRoutes, { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [
-   AuthGuard,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    mailService,
+    AccountService,
+    AlertService,
+    mailGlobalVariable,
+    DatePipe,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

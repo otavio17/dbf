@@ -3,21 +3,21 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-expansion',
   templateUrl: './expansion.component.html',
-  styleUrls: ['./expansion.component.scss']
+  styleUrls: ['./expansion.component.scss'],
 })
 export class ExpansionComponent {
   panelOpenState = false;
   step = 0;
 
-  setStep(index: number) {
+  setStep(index: number): void {
     this.step = index;
   }
 
-  nextStep() {
+  nextStep(): void {
     this.step++;
   }
 
-  prevStep() {
+  prevStep(): void {
     this.step--;
   }
 }

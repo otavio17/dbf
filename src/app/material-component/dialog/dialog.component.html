@@ -6,12 +6,14 @@
     <mat-card>
       <mat-card-content>
         <mat-card-title>Dialog Overview</mat-card-title>
-        <mat-card-subtitle>The
-          <code>&lt;MatDialog&gt;</code> service can be used to open modal dialogs with Material Design styling and animations.</mat-card-subtitle>
+        <mat-card-subtitle
+          >The <code>&lt;MatDialog&gt;</code> service can be used to open modal dialogs with
+          Material Design styling and animations.</mat-card-subtitle
+        >
         <ol>
           <li>
             <mat-form-field>
-              <input matInput [(ngModel)]="name" placeholder="What's your name?">
+              <input matInput [(ngModel)]="name" placeholder="What's your name?" />
             </mat-form-field>
           </li>
           <li>
@@ -19,7 +21,7 @@
           </li>
           <li *ngIf="animal">
             You chose:
-            <i>{{animal}}</i>
+            <i>{{ animal }}</i>
           </li>
         </ol>
       </mat-card-content>
