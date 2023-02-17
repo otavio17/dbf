@@ -1,5 +1,6 @@
-import { AccountService } from './../../../services/account.service';
+
 import { Component } from '@angular/core';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-top-card2',

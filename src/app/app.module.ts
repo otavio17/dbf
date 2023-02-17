@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 
@@ -35,6 +35,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AlertService } from './services/alert.service';
 import { AccountService } from './services/account.service';
 import { LoginComponent } from './login/login.component';
+import { ChartistModule } from 'ng-chartist';
+import { ChartsModule } from 'ng2-charts';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 export function HttpLoaderFactory(http: HttpClient): any {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -64,6 +67,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BrowserAnimationsModule,
     DemoMaterialModule,
     FormsModule,
+    CommonModule,
+    ChartistModule,
+    ChartsModule,
+    NgApexchartsModule,
     FlexLayoutModule,
     HttpClientModule,
     PerfectScrollbarModule,

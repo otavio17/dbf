@@ -1,72 +1,53 @@
-<mat-card>
-  <mat-card-content>
-    <div class="mb-1">
-      <h1 class="mt-0">
-      </h1>
-    </div>
+<!-- ============================================================== -->
+<!-- Card Group Row -->
+<!-- ============================================================== -->
+<app-top-card2></app-top-card2>
+<!-- ============================================================== -->
+<!-- Chart boxes -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <app-sales-purchase></app-sales-purchase>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <app-visitor2></app-visitor2>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
+    <app-sales-yearly></app-sales-yearly>
+  </div>
+  <!-- column -->
 
-    <div fxLayout="row wrap">
-      <div fxFlex.gt-xs="50" fxFlex="100">
-        <h4 class="text-danger font-bold">Quantidade Transações Realizadas</h4>
-        <div fxLayout="column">
-          <span>2500</span>
-        </div>
-      </div>
-      <div fxFlex.gt-xs="50" fxFlex="100">
-        <h4 class="text-danger font-bold">Valor Transações</h4>
-        <div fxLayout="column">
-          <span>500</span>
-        </div>
-      </div>
-    </div>
-  </mat-card-content>
-
-  <mat-card-content class="table-rasponsive">
-    <ngx-datatable
-      class="material"
-      [rows]="invoiceItems"
-      [columnMode]="'flex'"
-      [headerHeight]="50"
-      [footerHeight]="0"
-      [rowHeight]="'auto'"
-    >
-      <ngx-datatable-column name="Description" [flexGrow]="4">
-        <ng-template ngx-datatable-cell-template let-row="row">
-          <strong>{{ row.title }}</strong>
-          <br />
-          <span class="mat-text-muted">{{ row.subtitle }}</span>
-        </ng-template>
-      </ngx-datatable-column>
-      <ngx-datatable-column name="Unit Price" [flexGrow]="1">
-        <ng-template ngx-datatable-cell-template let-row="row">
-          <strong>{{ row.price | currency: 'USD':'symbol':'1.2-2' }}</strong>
-        </ng-template>
-      </ngx-datatable-column>
-      <ngx-datatable-column name="Quantity" [flexGrow]="1">
-        <ng-template ngx-datatable-cell-template let-row="row">
-          <strong>{{ row.quantity }}</strong>
-        </ng-template>
-      </ngx-datatable-column>
-      <ngx-datatable-column name="Total" [flexGrow]="1">
-        <ng-template ngx-datatable-cell-template let-row="row">
-          <strong>{{ row.price * row.quantity | currency: 'USD':'symbol':'1.2-2' }}</strong>
-        </ng-template>
-      </ngx-datatable-column>
-    </ngx-datatable>
-  </mat-card-content>
-
-  <mat-card-content class="bg-light">
-    <div class="d-flex align-items-center">
-      <div class="text-right ml-auto">
-        <h6 class="text-uppercase text-md ma-0 text-bold">Subtotal :</h6>
-        <h6 class="text-uppercase text-md ma-0 text-bold">Tax (2%) :</h6>
-        <h6 class="text-uppercase text-sm ma-0 text-bold">Total :</h6>
-      </div>
-      <div class="m-l-10">
-        <h4 class="font-medium">{{ getSubTotal() | currency: 'USD':'symbol':'1.2-2' }}</h4>
-        <h4 class="font-medium">{{ getCalculatedTax() | currency: 'USD':'symbol':'1.2-2' }}</h4>
-        <h4 class="font-medium">{{ getTotal() | currency: 'USD':'symbol':'1.2-2' }}</h4>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+  <!-- column -->
+</div>
+<!-- ============================================================== -->
+<!-- Image and chart -->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+  <!-- Column-->
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="40" fxFlex.gt-xs="100" fxFlex="100">
+    <app-developer-info></app-developer-info>
+  </div>
+  <!-- Column-->
+  <div fxFlex.gt-lg="75" fxFlex.gt-md="60" fxFlex.gt-xs="100" fxFlex="100">
+    <app-dashboard-emp></app-dashboard-emp>
+  </div>
+</div>
+<!-- ============================================================== -->
+<!-- Image Card row-->
+<!-- ============================================================== -->
+<div fxLayout="row wrap">
+  <!-- Card column -->
+  <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="100" fxFlex="100">
+    <app-comments></app-comments>
+  </div>
+  <!-- Card column -->
+  <!-- Card column -->
+  <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="100" fxFlex="100">
+    <app-message></app-message>
+  </div>
+</div>

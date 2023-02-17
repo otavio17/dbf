@@ -1,10 +1,13 @@
 import { Routes } from '@angular/router';
 
 import { MatIconComponent } from './material-icons/mat-icon.component';
-import { TimelineComponent } from './timeline/timeline.component';
+import { HistoricComponent } from './historic/historic.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionListComponent } from './transaction-list/transaction-list.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
-import { PricingComponent } from './pricing/pricing.component';
-import { HelperComponent } from './helper-classes/helper.component';
 
 export const PagesRoutes: Routes = [
   {
@@ -18,37 +21,50 @@ export const PagesRoutes: Routes = [
           urls: [{ title: 'Dashboard', url: '/dashboard' }, { title: 'Material Icons' }],
         },
       },
-      {
-        path: 'timeline',
-        component: TimelineComponent,
-        data: {
-          title: 'Timeline',
-          urls: [{ title: 'Dashboard', url: '/dashboard' }, { title: 'Timeline' }],
-        },
-      },
+    
       {
         path: 'home',
         component: HomeComponent,
         data: {
-          title: 'Realizar Transação',
+          title: 'home'
         },
       },
       {
-        path: 'pricing',
-        component: PricingComponent,
+        path: 'profile',
+        component: ProfileComponent,
         data: {
-          title: 'Pricing',
-          urls: [{ title: 'Dashboard', url: '/dashboard' }, { title: 'Pricing' }],
+          title: 'Profile'
         },
       },
       {
-        path: 'helper',
-        component: HelperComponent,
+        path: 'transaction',
+        component: TransactionComponent,
         data: {
-          title: 'Helper',
-          urls: [{ title: 'Dashboard', url: '/dashboard' }, { title: 'Helper' }],
+          title: 'Transaction',
         },
       },
+      {
+        path: 'historic',
+        component: HistoricComponent,
+        data: {
+          title: 'Historic',
+        },
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent,
+        data: {
+          title: 'Settings',
+        },
+      }
+      ,
+      {
+        path: 'transaction-list',
+        component: TransactionListComponent,
+        data: {
+          title: 'Transaction List',
+        },
+      }
     ],
   },
 ];

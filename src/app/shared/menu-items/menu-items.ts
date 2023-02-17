@@ -43,7 +43,7 @@ const MENUITEMS = [
     type: 'link',
     icon: 'home',
     isAdm:'no',
-    router: '/dashboards/dashboard2',
+    router: '/pages/home',
   },
   {
     state: 'historico_de_transacoes',
@@ -51,7 +51,7 @@ const MENUITEMS = [
     type: 'link',
     isAdm:'no',
     icon: 'history',
-    router: '/dashboards/dashboard1',
+    router: '/pages/historic',
   },
   {
     state: 'Realizar Transação',
@@ -59,7 +59,7 @@ const MENUITEMS = [
     type: 'link',
     isAdm:'no',
     icon: 'paid',
-    router: '/pages/home',
+    router: '/pages/transaction',
   },
   {
     state: 'listar_usuário',
@@ -67,7 +67,7 @@ const MENUITEMS = [
     type: 'link',
     isAdm:'yes',
     icon: 'group',
-    router: '/dashboards/dashboard1',
+    router: '/pages/user-list',
   }
   ,
   {
@@ -76,7 +76,7 @@ const MENUITEMS = [
     type: 'link',
     isAdm:'yes',
     icon: 'receipt_long',
-    router: '/dashboards/dashboard1',
+    router: '/pages/transaction-list',
   }
 /*,
   {

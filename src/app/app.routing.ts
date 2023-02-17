@@ -3,6 +3,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { AppBlankComponent } from './layouts/blank/blank.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const AppRoutes: Routes = [
   {
@@ -14,16 +15,6 @@ export const AppRoutes: Routes = [
         path: '',
         redirectTo: 'login',
         pathMatch: 'full',
-      },
-      {
-        path: 'dashboard',
-        redirectTo: '/dashboards/dashboard2',
-        pathMatch: 'full',
-      },
-      {
-        path: 'dashboards',
-        loadChildren: () =>
-          import('./dashboards/dashboards.module').then((m) => m.DashboardsModule),
       },
       {
         path: 'material',
@@ -75,20 +66,19 @@ export const AppRoutes: Routes = [
       canActivate: [AuthGuard],
       component: LoginComponent,
   }
+  
 
-  /*{
+,
+  {
     path: '',
-    component: AppBlankComponent,
-    children: [
-      {
-        path: 'authentication',
-        loadChildren: () =>
-          import('./authentication/authentication.module').then((m) => m.AuthenticationModule),
-      },
-    ],
+    redirectTo: 'pages/home',
+    canActivate: [AuthGuard],
+      component: HomeComponent,
   },
   {
     path: '**',
-    redirectTo: 'authentication/404',
-  },*/
+    redirectTo: 'pages/home',
+    canActivate: [AuthGuard],
+    component: HomeComponent,
+  },
 ];

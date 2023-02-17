@@ -80,4 +80,10 @@ export class VerticalAppSidebarComponent implements OnDestroy {
   logout(){
     this.accountService.logout();
   }
+  settings(){
+    this.router.navigate(['/pages/settings']);
+  }
+  profile(){
+    this.router.navigate(['/pages/profile']);
+  }
 }
