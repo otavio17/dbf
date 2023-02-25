@@ -815,8 +815,17 @@ Labels
   background-color: $primary;
 }
 
+.label-no-verification {
+  color: red;
+}
+
+
 .label-purple {
   background-color: $purple;
+}
+
+.label-margem-form {
+  margin-top: 20px;
 }
 
 .label-red {

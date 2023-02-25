@@ -5,7 +5,7 @@ import { HistoricComponent } from './historic/historic.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { ProfileComponent } from './profile/profile.component';
+
 import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
 
@@ -30,13 +30,6 @@ export const PagesRoutes: Routes = [
         },
       },
       {
-        path: 'profile',
-        component: ProfileComponent,
-        data: {
-          title: 'Profile'
-        },
-      },
-      {
         path: 'transaction',
         component: TransactionComponent,
         data: {
@@ -51,7 +44,7 @@ export const PagesRoutes: Routes = [
         },
       },
       {
-        path: 'settings',
+        path: 'sormettings',
         component: SettingsComponent,
         data: {
           title: 'Settings',

@@ -84,6 +84,6 @@ export class VerticalAppSidebarComponent implements OnDestroy {
     this.router.navigate(['/pages/settings']);
   }
   profile(){
-    this.router.navigate(['/pages/profile']);
+    this.router.navigate(['/forms/profile']);
   }
 }

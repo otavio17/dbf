@@ -113,6 +113,13 @@ export const MaterialRoutes: Routes = [
         },
       },
       {
+        path: 'dialog',
+        component: DialogComponent,
+        data: {
+          title: 'dialog'
+        },
+      },
+      {
         path: 'toolbar',
         component: ToolbarComponent,
         data: {

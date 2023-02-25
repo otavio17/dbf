@@ -14,6 +14,7 @@ import { EditorComponent } from './editor/editor.component';
 import { FormValidationComponent } from './form-validation/form-validation.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const FormRoutes: Routes = [
   {
@@ -121,6 +122,14 @@ export const FormRoutes: Routes = [
         data: {
           title: 'Form Wizard',
           urls: [{ title: 'Dashboard', url: '/dashboard' }, { title: 'Form Wizard' }],
+        },
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        data: {
+          title: 'Profile',
+         
         },
       },
       {

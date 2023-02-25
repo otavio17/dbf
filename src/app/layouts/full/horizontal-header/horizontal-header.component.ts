@@ -124,6 +124,6 @@ export class HorizontalAppHeaderComponent {
     this.routes.navigate(['/pages/settings']);
   }
   profile(){
-    this.routes.navigate(['/pages/profile']);
+    this.routes.navigate(['/forms/profile']);
   }
 }

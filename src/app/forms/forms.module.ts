@@ -1,3 +1,4 @@
+import { EmailComponent } from './profile/email/email.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -26,18 +27,35 @@ import { FormValidationComponent } from './form-validation/form-validation.compo
 import { UploadComponent } from './file-upload/upload.component';
 import { WizardComponent } from './wizard/wizard.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
+import {  DialogPhoneComponent, ProfileComponent } from './profile/profile.component';
+import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PhoneComponent } from './profile/phone/phone.component';
+import { SecurityComponent } from './profile/security/security.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+  wheelSpeed: 2,
+  wheelPropagation: true,
+};
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(FormRoutes),
     DemoMaterialModule,
+    QuillModule.forRoot(),
+    MatDatepickerModule,
+    PerfectScrollbarModule,
     FlexLayoutModule,
     FormsModule,
-    QuillModule.forRoot(),
     ReactiveFormsModule,
-    MatDatepickerModule,
     NgMultiSelectDropDownModule.forRoot(),
+  ],providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    }
   ],
   declarations: [
     AutocompleteComponent,
@@ -47,9 +65,14 @@ import { MultiselectComponent } from './multiselect/multiselect.component';
     DatepickerComponent,
     FormLayoutComponent,
     InputfieldComponent,
+    DialogPhoneComponent,
+    EmailComponent,
+    SecurityComponent,
+    PhoneComponent,
     SortheaderComponent,
     SelectfieldComponent,
     EditorComponent,
+    ProfileComponent,
     PaginatiorComponent,
     FormValidationComponent,
     UploadComponent,

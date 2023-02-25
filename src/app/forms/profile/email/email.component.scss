@@ -1,0 +1,25 @@
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.outline {
+  border-style: none;
+  border-width: medium;
+}
+
+.dialog-title {
+  display: flex;
+  float: right;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items:flex-end;
+}

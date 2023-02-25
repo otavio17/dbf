@@ -11,7 +11,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MatListModule } from '@angular/material/list';
 import { MatIconComponent } from './material-icons/mat-icon.component';
 import { SettingsComponent } from './settings/settings.component';
-import { ProfileComponent } from './profile/profile.component';
 import { HistoricComponent } from './historic/historic.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
@@ -25,6 +24,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ActivityComponent, ContactListComponent, DeveloperInfoComponent, IncomeExpenssComponent, NewsletterComponent, PostsComponent, SalesOverviewComponent, SalesPurchaseComponent, SalesYearlyComponent, TopCard2Component, TopCardComponent, Visitor2Component, VisitorComponent } from './dashboard-components';
 import { DashboardEmpComponent } from './dashboard-components/dashboard-emp/dashboard-emp.component';
 import { EmpDialogComponent } from './dashboard-components/dashboard-emp/emp-dialog/emp-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { QuillModule } from 'ngx-quill';
 @NgModule({
   imports: [
     CommonModule,
@@ -38,6 +40,9 @@ import { EmpDialogComponent } from './dashboard-components/dashboard-emp/emp-dia
     ChartistModule,
     ChartsModule,
     NgApexchartsModule,
+    QuillModule.forRoot(),
+    MatDatepickerModule,
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   declarations: [
     MatIconComponent,
@@ -47,7 +52,6 @@ import { EmpDialogComponent } from './dashboard-components/dashboard-emp/emp-dia
     TransactionListComponent,
     UserListComponent,
     TransactionComponent,
-    ProfileComponent,
     TopCardComponent,
     SalesOverviewComponent,
     VisitorComponent,

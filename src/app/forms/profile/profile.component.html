@@ -1,0 +1,67 @@
+
+<div  style="overflow-y: scroll; height:550px;">
+<perfect-scrollbar  [config]="config">
+  <form [formGroup]="options">
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Meu dados</mat-card-title>
+
+    <div class="label-margem-form">
+      <mat-form-field >
+        <input [disabled]="true"   value="{{currentUser.name}}" matInput placeholder="Nome" autocomplete="off" appBlockCopyPaste  />
+      </mat-form-field>
+
+      <mat-form-field >
+        <input [disabled]="true"   value="{{currentUser.account_id}}" matInput placeholder="Id" autocomplete="off" appBlockCopyPaste  />
+      </mat-form-field>
+
+
+      <mat-form-field >
+        <input  value="{{email2}}" matInput placeholder="email" autocomplete="off" />
+        <span matSuffix class="label label-primary m-l-10" (click)="openDialogEmail()">Alterar</span>
+        <mat-hint ><div style="color:red">Não verficado</div></mat-hint>
+      </mat-form-field>
+  
+      
+      <mat-form-field >
+        <input  value="" matInput placeholder="Telefone" autocomplete="off" />
+        <span matSuffix class="label label-primary m-l-10" (click)="openDialogPhone()">Alterar</span>
+        <mat-hint class="label-no-verification"><div style="color:red">Não verficado</div></mat-hint>
+      </mat-form-field>
+
+          
+      <mat-form-field >
+        <input  value="" matInput placeholder="Identidade" autocomplete="off" />
+        <span matSuffix class="label label-primary m-l-10">Alterar</span>
+        <mat-hint class="label-no-verification"><div style="color:red">Não verficado</div></mat-hint>
+      </mat-form-field>
+  
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  
+  <mat-card-content>
+    <mat-card-title>Segurança</mat-card-title>
+
+    <div class="label-margem-form">
+      <!--<mat-form-field>
+        <input matInput placeholder="Security Password" value="testenrjen" [type]="hide ? 'password' : 'text'" />
+        <mat-icon matSuffix (click)="hide = !hide">{{
+          hide ? 'visibility' : 'visibility_off'
+        }}</mat-icon>
+      </mat-form-field>-->
+      <button style="margin-top: 20px;" mat-raised-button color="warn" matSuffix  (click)="openDialogSecurity()">Criar Senha de Segurança</button>
+ 
+
+  
+    
+  
+    </div>
+  </mat-card-content>
+
+</mat-card>
+</form>
+</perfect-scrollbar>
+</div>
