@@ -12,6 +12,7 @@ export class AccountService {
     private userSubject: BehaviorSubject<User | null>;
     public user: Observable<User | null>;
     public headers: any;
+    
 
     constructor(
         private router: Router,
@@ -99,6 +100,18 @@ export class AccountService {
                 return x;
             }));
     }
+
+    changeProfileEmail(id: any, email:any){
+        let data = {
+          email:email,
+      };
+ 
+        return this.http.patch<any>(`${environment.apiUrl}/users/edit/`+id,data)
+              .pipe(map(user => {
+                  return user;
+              }));
+      }
+  
 }
 
           

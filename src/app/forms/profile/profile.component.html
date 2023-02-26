@@ -17,14 +17,14 @@
 
 
       <mat-form-field >
-        <input  value="{{email2}}" matInput placeholder="email" autocomplete="off" />
+        <input [disabled]="true" value="{{email2}}" matInput placeholder="email" autocomplete="off" />
         <span matSuffix class="label label-primary m-l-10" (click)="openDialogEmail()">Alterar</span>
         <mat-hint ><div style="color:red">Não verficado</div></mat-hint>
       </mat-form-field>
   
       
       <mat-form-field >
-        <input  value="" matInput placeholder="Telefone" autocomplete="off" />
+        <input [disabled]="true"  value="" matInput placeholder="Telefone" autocomplete="off" />
         <span matSuffix class="label label-primary m-l-10" (click)="openDialogPhone()">Alterar</span>
         <mat-hint class="label-no-verification"><div style="color:red">Não verficado</div></mat-hint>
       </mat-form-field>

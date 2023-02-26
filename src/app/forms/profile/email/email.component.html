@@ -1,7 +1,7 @@
 
 <mat-dialog-content class="mat-typography">
   <mat-card-content>
-    <mat-card-title  mat-dialog-title style="margin-top: 20px; margin-bottom: 50px;">Adicionar um email</mat-card-title>
+    <mat-card-title  mat-dialog-title style="margin-top: 20px; margin-bottom: 50px;">Inserir um email</mat-card-title>
     
     <div>
       <mat-form-field>
@@ -11,7 +11,7 @@
 
         <mat-dialog-actions align="end" >
           <button mat-button mat-dialog-close>Fechar</button>
-          <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Adicionar email</button>
+          <button mat-button [mat-dialog-close]="true" color="warn" (click)="changeEmailOnClik('')" cdkFocusInitial>Alterar email</button>
         </mat-dialog-actions>
  
   <button  mat-raised-button color="warn" a  matSuffix ></button></div> </div>

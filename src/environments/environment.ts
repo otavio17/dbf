@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiUrl:"http://iboltt.com:5000"
+  apiUrl:"https://apisandbox.wenovpay.com.br/api"
 };
 
 /*
