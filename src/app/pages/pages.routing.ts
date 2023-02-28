@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { MatIconComponent } from './material-icons/mat-icon.component';
-import { HistoricComponent } from './historic/historic.component';
+import { HistoryComponent } from './history/history.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -37,10 +37,10 @@ export const PagesRoutes: Routes = [
         },
       },
       {
-        path: 'historic',
-        component: HistoricComponent,
+        path: 'history',
+        component: HistoryComponent,
         data: {
-          title: 'Historic',
+          title: 'History',
         },
       },
       {

@@ -51,7 +51,7 @@ const MENUITEMS = [
     type: 'link',
     isAdm:'no',
     icon: 'history',
-    router: '/pages/historic',
+    router: '/pages/history',
   },
   {
     state: 'Realizar Transação',

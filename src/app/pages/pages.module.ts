@@ -11,7 +11,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MatListModule } from '@angular/material/list';
 import { MatIconComponent } from './material-icons/mat-icon.component';
 import { SettingsComponent } from './settings/settings.component';
-import { HistoricComponent } from './historic/historic.component';
+import { HistoryComponent } from './history/history.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { TransactionListComponent } from './transaction-list/transaction-list.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -48,7 +48,7 @@ import { QuillModule } from 'ngx-quill';
     MatIconComponent,
     SettingsComponent,
     HomeComponent,
-    HistoricComponent,
+    HistoryComponent,
     TransactionListComponent,
     UserListComponent,
     TransactionComponent,

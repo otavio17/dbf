@@ -1,0 +1,33 @@
+[
+  {
+    "id": "00123",
+    "data": "17/05/2023 11:30",
+    "valor": "R$ 1092.00",
+    "tipo": "Value Deposit"
+  },
+  {
+    "id": "00124",
+    "data": "17/05/2023 11:40",
+    "valor": "R$ 15.00",
+    "tipo": "Value Deposit"
+  },
+  {
+    "id": "00125",
+    "data": "17/05/2023 12:40",
+    "valor": "R$ 19.00",
+    "tipo": "Bonus"
+  }
+  ,
+  {
+    "id": "00126",
+    "data": "17/05/2023 19:40",
+    "valor": "R$ 150.00",
+    "tipo": "Online Payment"
+  },
+  {
+    "id": "00127",
+    "data": "17/05/2023 19:41",
+    "valor": "R$ 1039.00",
+    "tipo": "Online Payment"
+  }
+]

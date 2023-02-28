@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-content>
+    <div class="mb-1">
+      <h1 class="mt-0">
+       <!-- Histórico de Transações-->
+      </h1>
+    </div>
+
+    <div fxLayout="row wrap">
+      <div fxFlex.gt-xs="15" fxFlex="100">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Data inicial" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div style="margin-left: 20px;" fxFlex.gt-xs="15" fxFlex="100">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="Data final" />
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div style="margin-left: 20px;" fxFlex.gt-xs="15" fxFlex="100">
+      <mat-form-field>
+        <mat-select placeholder="Transaction Type" (selectionChange)="onChange($event.value)">
+          <mat-option *ngFor="let transactionType of transactionType" [value]="transactionType.viewValue">
+            {{ transactionType.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+    <div class="table-responsive">
+      <ngx-datatable
+        #table
+        class="material"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10"
+        [rows]="rows"
+      >
+      </ngx-datatable>
+    </div>
+    </div>
+  </mat-card-content>
+</mat-card>
