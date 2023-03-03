@@ -57,6 +57,13 @@ export const PagesRoutes: Routes = [
         data: {
           title: 'Transaction List',
         },
+      },
+      {
+        path: 'user-list',
+        component:UserListComponent,
+        data: {
+          title: 'User List',
+        },
       }
     ],
   },

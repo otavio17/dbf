@@ -27,6 +27,8 @@ import { EmpDialogComponent } from './dashboard-components/dashboard-emp/emp-dia
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { QuillModule } from 'ngx-quill';
+import { TransactionReceivedListComponent } from './company/transaction-received-list/transaction-received-list.component';
+import { RegisterCompaniesListComponent } from './company/register-companies-list/register-companies-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -52,7 +54,10 @@ import { QuillModule } from 'ngx-quill';
     TransactionListComponent,
     UserListComponent,
     TransactionComponent,
+    TransactionListComponent,
     TopCardComponent,
+    TransactionReceivedListComponent,
+    RegisterCompaniesListComponent,
     SalesOverviewComponent,
     VisitorComponent,
     Visitor2Component,
@@ -69,6 +74,8 @@ import { QuillModule } from 'ngx-quill';
     MessageComponent,
     DashboardEmpComponent,
     EmpDialogComponent,
+    RegisterCompaniesListComponent,
+    RegisterCompaniesListComponent,
   ],
 })
 export class PagesModule {}

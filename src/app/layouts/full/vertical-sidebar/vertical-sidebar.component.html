@@ -45,7 +45,11 @@
       class=""
       appAccordionToggle
       [routerLink]="['/', menuitem.state]"
-      *ngIf="menuitem.type === 'link' && (( menuitem.isAdm === 'yes' && currentUser.TypeUserId=== 5)||(menuitem.isAdm === 'no'))"
+      *ngIf="menuitem.type === 'link' &&      
+      (( menuitem.typeUser === currentUser.TypeUserId)||
+        (
+          (menuitem.typeUser === -1 && (currentUser.TypeUserId ===5 || currentUser.TypeUserId ===1))
+        )||(menuitem.typeUser === -2))"
       (click)="routerLink(menuitem.router)"
     >
       <mat-icon>{{ menuitem.icon }}</mat-icon>
