@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
             data => {
             //  this.alertService.success("", true);
               console.log("teste sucesso "+JSON.stringify(data));
-    
-              this.routes.navigate(['/dashboards/dashboard2']);
+              this.routes.navigate(['/pages/home']);
+              this.routes.navigate(['/pages/home']);
             },
             error => {
               console.log("teste  erro= "+JSON.stringify(error)+"");

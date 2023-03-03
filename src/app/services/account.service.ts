@@ -9,10 +9,11 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
-    private userSubject: BehaviorSubject<User | null>;
+    public userSubject: BehaviorSubject<User | null>;
     public user: Observable<User | null>;
+    private hasUser = false;
     public headers: any;
-    
+
 
     constructor(
         private router: Router,
@@ -28,8 +29,10 @@ export class AccountService {
     }
 
     public get userValue() {
-        return this.userSubject.value;
+        if(this.userSubject.value != null)
+        return JSON.parse(localStorage.getItem('user')+"");
     }
+   
 
     login(username: string, password: string) {
       let data = {
@@ -50,6 +53,7 @@ export class AccountService {
                 localStorage.setItem('username', user.name);
                 localStorage.setItem('email', username);
                 this.userSubject.next(user);
+                this.userSubject.complete();
                 return user;
             }));
     }
@@ -58,6 +62,7 @@ export class AccountService {
         // remove user from local storage and set current user to null
         localStorage.removeItem('username');
         localStorage.removeItem('user');
+        this.userSubject.next({} as  User)
         this.router.navigate(['/login']);
         
     }
