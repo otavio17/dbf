@@ -74,14 +74,14 @@ const MENUITEMS = [
     state: 'listar_transacao',
     name: 'Listar Transação',
     type: 'link',
-    typeUser:1,
+    typeUser:5,
     icon: 'receipt_long',
     router: '/pages/transaction-list',
   }
   ,
   {
     state: 'listar-cadastrar-empresas',
-    name: 'Listar e Cadastrar Empresas',
+    name: 'Listar Empresas',
     type: 'link',
     typeUser:3,
     icon: 'receipt_long',
@@ -90,7 +90,7 @@ const MENUITEMS = [
   ,
   {
     state: 'transaction-received-list',
-    name: 'Listar Transações Recebidas',
+    name: 'Transações Recebidas',
     type: 'link',
     typeUser:3,
     icon: 'receipt_long',

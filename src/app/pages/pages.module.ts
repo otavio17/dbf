@@ -1,3 +1,4 @@
+import { HomeCompanyComponent } from './dashboard-components/home-company/home-company.component';
 import { MessageComponent } from './dashboard-components/message/message.component';
 import { CommentsComponent } from './dashboard-components/comments/comments.component';
 import { NgModule } from '@angular/core';
@@ -29,6 +30,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { QuillModule } from 'ngx-quill';
 import { TransactionReceivedListComponent } from './company/transaction-received-list/transaction-received-list.component';
 import { RegisterCompaniesListComponent } from './company/register-companies-list/register-companies-list.component';
+import { HomeAdmComponent } from './dashboard-components/home-adm/home-adm.component';
+import { HomeUserComponent } from './dashboard-components/home-user/home-user.component';
+import { CreateCompanyComponent } from './company/register-companies-list/create-company/create-company.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -59,6 +63,7 @@ import { RegisterCompaniesListComponent } from './company/register-companies-lis
     TransactionReceivedListComponent,
     RegisterCompaniesListComponent,
     SalesOverviewComponent,
+    CreateCompanyComponent,
     VisitorComponent,
     Visitor2Component,
     IncomeExpenssComponent,
@@ -69,6 +74,9 @@ import { RegisterCompaniesListComponent } from './company/register-companies-lis
     TopCard2Component,
     SalesPurchaseComponent,
     SalesYearlyComponent,
+    HomeCompanyComponent,
+    HomeAdmComponent,
+    HomeUserComponent,
     ContactListComponent,
     CommentsComponent,
     MessageComponent,

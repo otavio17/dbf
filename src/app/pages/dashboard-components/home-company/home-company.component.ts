@@ -16,7 +16,6 @@ import {
   ApexNonAxisChartSeries,
   ApexResponsive,
 } from 'ng-apexcharts';
-import { AccountService } from 'src/app/services/account.service';
 
 // tslint:disable-next-line - Disables all
 export interface inexpu2chartOptions {
@@ -34,17 +33,15 @@ export interface inexpu2chartOptions {
 }
 
 @Component({
-  selector: 'app-sales-purchase',
-  templateUrl: './sales-purchase.component.html',
-  styleUrls: ['./sales-purchase.component.scss'],
+  selector: 'app-home-company',
+  templateUrl: './home-company.component.html',
+  styleUrls: ['./home-company.component.scss'],
 })
-export class SalesPurchaseComponent {
+export class HomeCompanyComponent {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
   public inexpu2chartOptions: Partial<inexpu2chartOptions>;
-  public currentUser: any;
 
-  constructor(public accountService: AccountService) {
-    this.currentUser = this.accountService.userValue;
+  constructor() {
     this.inexpu2chartOptions = {
       series: [
         {

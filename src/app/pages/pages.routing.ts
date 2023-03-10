@@ -1,3 +1,4 @@
+import { RegisterCompaniesListComponent } from './company/register-companies-list/register-companies-list.component';
 import { Routes } from '@angular/router';
 
 import { MatIconComponent } from './material-icons/mat-icon.component';
@@ -8,6 +9,7 @@ import { UserListComponent } from './user-list/user-list.component';
 
 import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
+import { TransactionReceivedListComponent } from './company/transaction-received-list/transaction-received-list.component';
 
 export const PagesRoutes: Routes = [
   {
@@ -44,7 +46,7 @@ export const PagesRoutes: Routes = [
         },
       },
       {
-        path: 'sormettings',
+        path: 'settings',
         component: SettingsComponent,
         data: {
           title: 'Settings',
@@ -56,6 +58,20 @@ export const PagesRoutes: Routes = [
         component: TransactionListComponent,
         data: {
           title: 'Transaction List',
+        },
+      },
+      {
+        path: 'company/transaction-received-list',
+        component: TransactionReceivedListComponent,
+        data: {
+          title: 'Transaction Received List',
+        },
+      },
+      {
+        path: 'company/register-companies-list',
+        component: RegisterCompaniesListComponent,
+        data: {
+          title: 'Register Companies  List',
         },
       },
       {

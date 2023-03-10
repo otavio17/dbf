@@ -40,13 +40,13 @@ export class AccountService {
         password:password 
     };
     let headers = new HttpHeaders({
-        'Access-Control-Allow-Origin': 'http://localhost:4200/',
+        'Access-Control-Allow-Origin': 'http://localhost:3000/',
         'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
         "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token"});
 
     let options = { headers: headers };
 
-      return this.http.post<any>(`${environment.apiUrl}/users/login`,data)
+      return this.http.post<any>(`${environment.apiUrl}/users/login`,data,options)
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));

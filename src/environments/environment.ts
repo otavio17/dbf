@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiUrl:"https://apisandbox.wenovpay.com.br/api"
+  apiUrl:"https://apisandbox.wenovpay.com.br",
 };
 
 /*

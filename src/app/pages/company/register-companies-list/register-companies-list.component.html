@@ -1,1 +1,42 @@
-<p>register-companies-list works!</p>
+<mat-card>
+    <div class="box">
+        <div  class="btnCreate">
+    <button  mat-raised-button color="warn" matSuffix  (click)="openCreateCompany()">Criar Senha de Segurança</button>
+</div>
+</div>
+ 
+    <mat-card-content>
+      <div class="mb-1">
+        <h1 class="mt-0">
+        </h1>
+      </div>
+      <div class="label-margem-form"  style="background-color: aqua;" >
+        <!--<mat-form-field>
+          <input matInput placeholder="Security Password" value="testenrjen" [type]="hide ? 'password' : 'text'" />
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? 'visibility' : 'visibility_off'
+          }}</mat-icon>
+        </mat-form-field>-->
+
+    
+      </div>
+      <div style="margin-top: 20px;">
+      
+      <div class="table-responsive">
+        <ngx-datatable
+          #table
+          class="material"
+          [columns]="columns"
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [limit]="10"
+          [rows]="rows"
+        >
+        </ngx-datatable>
+      </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

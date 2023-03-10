@@ -11,6 +11,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MenuItems } from '../../../shared/menu-items/menu-items';
 import { Router } from '@angular/router';
+import { UtilRouterService } from 'src/app/services/util-router.service';
 
 @Component({
   selector: 'app-vertical-sidebar',
@@ -53,6 +54,7 @@ export class VerticalAppSidebarComponent implements OnDestroy {
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher,
     private router: Router,
+    private utilRouter:UtilRouterService,
     public accountService: AccountService,
     public menuItems: MenuItems,
   ) {
@@ -81,9 +83,9 @@ export class VerticalAppSidebarComponent implements OnDestroy {
     this.accountService.logout();
   }
   settings(){
-    this.router.navigate(['/pages/settings']);
+    this.utilRouter.settings();
   }
   profile(){
-    this.router.navigate(['/forms/profile']);
+    this.utilRouter.profile();
   }
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { UtilRouterService } from 'src/app/services/util-router.service';
 
 @Component({
   selector: 'app-vertical-header',
@@ -104,7 +105,7 @@ export class VerticalAppHeaderComponent {
     }
   ];
 
-  constructor(private translate: TranslateService, private routes: Router,public accountService: AccountService) {
+  constructor(private translate: TranslateService,   private utilRouter:UtilRouterService, private routes: Router,public accountService: AccountService) {
     translate.setDefaultLang('en');
   }
 
@@ -118,9 +119,9 @@ export class VerticalAppHeaderComponent {
   }
 
   settings(){
-    this.routes.navigate(['/pages/settings']);
+    this.utilRouter.settings();
   }
   profile(){
-    this.routes.navigate(['/forms/profile']);
+    this.utilRouter.profile();
   }
 }

@@ -7,5 +7,6 @@ export class User {
     token!: string;
     TypeUserId!:number;
     LevelUserId!:number;
+    balance!: number;
     verified_identity!:number;
 }

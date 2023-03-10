@@ -1,0 +1,36 @@
+
+<mat-dialog-content class="mat-typography">
+  <mat-card-content>
+    <mat-card-title  mat-dialog-title style="margin-top: 20px; margin-bottom: 50px;">Cadastrar Empresa</mat-card-title>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Corporate Name"  value=" " [type]=" 'text'" autocomplete="doNotAutoComplete" [(ngModel)]="formCorporateName" appBlockCopyPaste  />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Fantasy" [(ngModel)]="formFantasy"  value=" " [type]=" 'text'" autocomplete="doNotAutoComplete" appBlockCopyPaste  />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Token"   [(ngModel)]="formToken" value=" " [type]=" 'text'" autocomplete="doNotAutoComplete" appBlockCopyPaste  />
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-select placeholder="Country"  [(value)]="countryType">
+            <mat-option *ngFor="let countryType of country" [value]="countryType.id">
+              {{ countryType.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+          <div align="end">
+            <mat-dialog-actions align="end" >
+              <button mat-button mat-dialog-close>Fechar</button>
+              <button mat-button  color="warn" (click)="onCreateEmpresa()" cdkFocusInitial>Cadastrar</button>
+            </mat-dialog-actions>
+     
+      <button  mat-raised-button color="warn" a  matSuffix ></button></div>
+    </div>
+  </mat-card-content>
+</mat-dialog-content>

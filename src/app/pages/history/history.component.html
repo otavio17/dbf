@@ -9,29 +9,29 @@
     <div fxLayout="row wrap">
       <div fxFlex.gt-xs="15" fxFlex="100">
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Data inicial" />
+          <input matInput [matDatepicker]="picker" placeholder="Data inicial"  [(ngModel)]="dateInit"/>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
       <div style="margin-left: 20px;" fxFlex.gt-xs="15" fxFlex="100">
         <mat-form-field>
-          <input matInput [matDatepicker]="picker2" placeholder="Data final" />
+          <input matInput [matDatepicker]="picker2" placeholder="Data final" [(ngModel)]="dateFinish" />
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
       </div>
       <div style="margin-left: 20px;" fxFlex.gt-xs="15" fxFlex="100">
       <mat-form-field>
-        <mat-select placeholder="Transaction Type" (selectionChange)="onChange($event.value)">
-          <mat-option *ngFor="let transactionType of transactionType" [value]="transactionType.viewValue">
-            {{ transactionType.viewValue }}
+        <mat-select placeholder="Transaction Type" (selectionChange)="listHistory(false)" [(value)]="tType">
+          <mat-option *ngFor="let transactionType of transactionType" [value]="transactionType.id">
+            {{ transactionType.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
       </div>
       <div style="margin-left: 20px; align-items:center;margin-top: 20px;" fxFlex.gt-xs="15" fxFlex="100">
-      <mat-icon (click)="onChange($event.value)" >search</mat-icon>
+      <mat-icon (click)="listHistory(false)" >search</mat-icon>
       </div>
     </div>
 

@@ -34,11 +34,11 @@ export interface inexpu2chartOptions {
 }
 
 @Component({
-  selector: 'app-sales-purchase',
-  templateUrl: './sales-purchase.component.html',
-  styleUrls: ['./sales-purchase.component.scss'],
+  selector: 'app-home-user',
+  templateUrl: './home-user.component.html',
+  styleUrls: ['./home-user.component.scss'],
 })
-export class SalesPurchaseComponent {
+export class HomeUserComponent {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
   public inexpu2chartOptions: Partial<inexpu2chartOptions>;
   public currentUser: any;

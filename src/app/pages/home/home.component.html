@@ -1,26 +1,3 @@
-<!-- ============================================================== -->
-<!-- Card Group Row -->
-<!-- ============================================================== -->
-<app-top-card2></app-top-card2>
-<!-- ============================================================== -->
-<!-- Chart boxes -->
-<!-- ============================================================== -->
-<div fxLayout="row wrap">
-  <!-- column -->
-  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
-    <app-sales-purchase></app-sales-purchase>
-  </div>
-  <!-- column -->
-  <!-- column -->
-  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
-    <app-visitor2></app-visitor2>
-  </div>
-  <!-- column -->
-  <!-- column -->
-  <div fxFlex.gt-md="33.33" fxFlex.gt-xs="100" fxFlex="100">
-    <app-sales-yearly></app-sales-yearly>
-  </div>
-  <!-- column -->
-
-  <!-- column -->
-</div>
+<app-home-user *ngIf="this.currentUser.TypeUserId===1"></app-home-user>
+<app-home-company *ngIf="this.currentUser.TypeUserId===3"></app-home-company>
+<app-home-adm *ngIf="this.currentUser.TypeUserId===5"></app-home-adm>
