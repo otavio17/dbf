@@ -47,7 +47,7 @@ const MENUITEMS = [
   },
   {
     state: 'historico_de_transacoes',
-    name: 'Histórico de Transações',
+    name: 'Transaction History',
     type: 'link',
     typeUser:-1,
     icon: 'history',
@@ -55,7 +55,7 @@ const MENUITEMS = [
   },
   {
     state: 'realizar_transacoes',
-    name: 'Realizar Transações',
+    name: 'Make Transactions',
     type: 'link',
     typeUser:-1,
     icon: 'paid',
@@ -63,7 +63,7 @@ const MENUITEMS = [
   },
   {
     state: 'listar_usuário',
-    name: 'Listar Usuário',
+    name: 'List All Users',
     type: 'link',
     typeUser:5,
     icon: 'group',
@@ -81,19 +81,19 @@ const MENUITEMS = [
   ,
   {
     state: 'listar-cadastrar-empresas',
-    name: 'Listar Empresas',
+    name: 'My Companies',
     type: 'link',
     typeUser:3,
-    icon: 'receipt_long',
+    icon: 'store',
     router: '/pages/company/register-companies-list',
   }
   ,
   {
     state: 'transaction-received-list',
-    name: 'Transações Recebidas',
+    name: 'Received Transactions',
     type: 'link',
     typeUser:3,
-    icon: 'receipt_long',
+    icon: 'list',
     router: '/pages/company/transaction-received-list',
   }
 /*,

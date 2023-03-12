@@ -28,21 +28,21 @@ export const PagesRoutes: Routes = [
         path: 'home',
         component: HomeComponent,
         data: {
-          title: 'home'
+          title: 'Home'
         },
       },
       {
         path: 'transaction',
         component: TransactionComponent,
         data: {
-          title: 'Transaction',
+          title: 'Make New Transaction',
         },
       },
       {
         path: 'history',
         component: HistoryComponent,
         data: {
-          title: 'History',
+          title: 'Transaction History',
         },
       },
       {
@@ -71,7 +71,7 @@ export const PagesRoutes: Routes = [
         path: 'company/register-companies-list',
         component: RegisterCompaniesListComponent,
         data: {
-          title: 'Register Companies  List',
+          title: 'My Companies Listing',
         },
       },
       {
