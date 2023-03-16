@@ -21,7 +21,7 @@
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
       </div>
-      <div style="margin-left: 20px;" fxFlex.gt-xs="15" fxFlex="100">
+      <div style="margin-left: 20px;" fxFlex.gt-xs="20" fxFlex="100">
       <mat-form-field>
         <mat-select placeholder="Transaction Type" (selectionChange)="listHistory(false)" [(value)]="tType">
           <mat-option *ngFor="let transactionType of transactionType" [value]="transactionType.id">

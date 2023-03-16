@@ -1,9 +1,17 @@
-<mat-card>
-  <mat-card-content>
-    <div class="mb-1">
-      <h1 class="mt-0">
-        <!-- Do Transaction -->
-      </h1>
+<div fxLayout="row wrap" fxLayoutAlign="center start" class="pricing-box">
+  <div fxFlex.gt-sm="30" fxFlex="100">
+    <div class="card-group text-center">
+   
+      <mat-card class="pricing-plan popular-plan">
+        <mat-card-content>
+          <span class="pop-tag">Deposit</span>
+          <mat-card-title>Credit Card</mat-card-title>
+          <mat-card-subtitle class="mat-text-primary">Tax of 2.99%</mat-card-subtitle>
+  
+          <button mat-raised-button color="warn" (click)="openMakeDeposit()">Make Deposit</button>
+        </mat-card-content>
+      </mat-card>
+
     </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>

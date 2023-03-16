@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-transaction',
@@ -58,5 +59,11 @@ export class TransactionComponent {
     return this.getSubTotal() + this.getCalculatedTax();
   }
 
-  constructor() {}
+  constructor(private routes: Router) {}
+
+
+  openMakeDeposit(){
+    this.routes.navigate(['pages/credit-card-deposit']);
+    // this.routes.navigate(['/user/credit-card-deposit']);
+  }
 }

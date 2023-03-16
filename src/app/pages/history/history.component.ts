@@ -130,7 +130,7 @@ reordenarList(date:any){
       "id": date[i].id,
       "operation": date[i].date,
       "moeda": date[i].currency,
-      "valor": date[i].currency +" "+date[i].value,
+      "valor": date[i].value,
       "status": (date[i].StatusTransactionId === 1)?"Confirmed":"Pending",
       "observations": "",
       "data": this.utilDateService.dateTransform(date[i].createdAt, "short")+"",

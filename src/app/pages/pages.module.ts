@@ -33,6 +33,8 @@ import { RegisterCompaniesListComponent } from './company/register-companies-lis
 import { HomeAdmComponent } from './dashboard-components/home-adm/home-adm.component';
 import { HomeUserComponent } from './dashboard-components/home-user/home-user.component';
 import { CreateCompanyComponent } from './company/register-companies-list/create-company/create-company.component';
+import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -54,6 +56,7 @@ import { CreateCompanyComponent } from './company/register-companies-list/create
     MatIconComponent,
     SettingsComponent,
     HomeComponent,
+    CreditCardDepositComponent,
     HistoryComponent,
     TransactionListComponent,
     UserListComponent,

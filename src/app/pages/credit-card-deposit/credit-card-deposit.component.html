@@ -1,0 +1,67 @@
+  <mat-card>
+    <mat-card-content>
+        <div fxLayout="row wrap">
+            <div style="margin-left:0px;" fxFlex.gt-xs="15" fxFlex="100">
+                <mat-form-field>
+                  <mat-select placeholder="Moeda" (selectionChange)="listMoeda(false)" [(value)]="moedaId">
+                    <mat-option *ngFor="let moeda of moeda" [value]="moeda.id">
+                      {{moeda.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+            <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="100">
+                <mat-form-field >
+                    <mat-label>Valor</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+            </div>
+            <mat-form-field >
+                <mat-label>Nome do Portador do cartão</mat-label>
+                <input matInput />
+              </mat-form-field>
+              <mat-form-field >
+                <mat-label>Número do cartão</mat-label>
+                <input matInput />
+              </mat-form-field>
+              <div style="margin-left:0px;display: flex;
+              align-items: center; " fxFlex.gt-xs="10" fxFlex="100">
+             
+                    <mat-label>Validade</mat-label>
+          
+              </div>
+              <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="100">
+                <mat-form-field>
+                  <mat-select placeholder="Mês" (selectionChange)="listMes(false)" [(value)]="mesId">
+                    <mat-option *ngFor="let mes of mes" [value]="mes.id">
+                      {{mes.name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                </div>
+                <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="100">
+                    <mat-form-field>
+                      <mat-select placeholder="Ano" (selectionChange)="listAno(false)" [(value)]="anoId">
+                        <mat-option *ngFor="let ano of ano" [value]="ano.id">
+                          {{ano.name }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    </div>
+
+                    <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="10">
+                        <mat-form-field >
+                            <mat-label>CVC</mat-label>
+                            <input matInput />
+                          </mat-form-field>
+                        </div>
+          </div>
+        <div>
+         
+</div>
+<div mat-dialog-actions align="end">
+    <button style="margin-top: 30px; align-items:end;"  align="end" mat-raised-button color="warn" a  matSuffix >Confirmar Depósito</button>
+
+  </div>
+</mat-card-content>
+</mat-card>

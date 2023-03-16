@@ -10,6 +10,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { SettingsComponent } from './settings/settings.component';
 import { HomeComponent } from './home/home.component';
 import { TransactionReceivedListComponent } from './company/transaction-received-list/transaction-received-list.component';
+import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
 
 export const PagesRoutes: Routes = [
   {
@@ -65,6 +66,13 @@ export const PagesRoutes: Routes = [
         component: TransactionReceivedListComponent,
         data: {
           title: 'Transaction Received List',
+        },
+      },
+      {
+        path: 'credit-card-deposit',
+        component: CreditCardDepositComponent,
+        data: {
+          title: 'Credit Card Deposit',
         },
       },
       {
