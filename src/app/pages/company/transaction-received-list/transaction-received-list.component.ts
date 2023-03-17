@@ -14,8 +14,9 @@ export class TransactionReceivedListComponent  implements OnInit{
   public dateInit!: Date;
   public dateFinish!: Date;
   public rows: any[] = [];
-  public columnsLabel = [{ name: 'Data' },{name:'Operacao'},{name:'Moeda'},{ name: 'Valor' },{ name: 'Usuario' },{name:'Transacao'}];
-  public columns =      [{ name: 'Data' },{name:'Operacao'},{name:'Moeda'},{ name: 'Valor' },{ name: 'Usuario' },{name:'Transacao'}];
+
+  public columnsLabel = [{ name: 'Data' },{ name: 'Empresa' },{name:'Operacao'},{name:'Moeda'},{ name: 'Valor' },{ name: 'Usuario' },{name:'Transacao'}];
+  public columns =      [{ name: 'Data' },{ name: 'Empresa' },{name:'Operacao'},{name:'Moeda'},{ name: 'Valor' },{ name: 'Usuario' },{name:'Transacao'}];
   public temp:any[] = [];
   public loadingIndicator = true;
   public reorderable = true;
@@ -138,6 +139,7 @@ reordenarList(date:any){
       "currency": date[i].currency,
       "moeda": date[i].currency,
       "valor": date[i].value,
+      "empresa": this.typeCompanie(date[i].CompanieId),
       "usuario":  date[i].UserId,
       "data": this.utilDateService.dateTransform(date[i].createdAt, "short")+"",
       "transacao":  this.typeTransacao(date[i].TypeTransactionId),
@@ -160,6 +162,16 @@ private typeTransacao(id:bigint){
 return "---"
 }
 
+private typeCompanie(id:bigint){
+  for (var i = 0; i < this.companie.length; i++) {
+    console.log("teste companie NAME= "+this.companie[i].fantasy);
+  if(id === this.companie[i].id){
+  return this.companie[i].fantasy;
+  }
+  
+}
+return "---"
+}
   updateValue(event: any, cell: string, rowIndex: number): void {
     console.log('inline editing rowIndex', rowIndex);
     // // // this.editing[rowIndex + '-' + cell] = false;
