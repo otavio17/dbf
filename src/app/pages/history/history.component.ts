@@ -3,6 +3,7 @@ import { RestService } from './../../services/rest.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
+import { AccountService } from 'src/app/services/account.service';
 
 export interface TransactionType {
   value: string;
@@ -46,7 +47,9 @@ export class HistoryComponent  implements OnInit{
         },
         error => {
           console.log("teste  erro= "+JSON.stringify(error)+"");
-  
+          alert(error.error.message);
+          if(error.error.message.includes("Token"))
+          this.accountService.logout();
         });
 
 
@@ -56,7 +59,8 @@ export class HistoryComponent  implements OnInit{
 
 
   @ViewChild(HistoryComponent, { static: true }) table: HistoryComponent = Object.create(null);
-  constructor(public restService:RestService, public utilDateService:UtilDateService) {
+  constructor(public restService:RestService, public utilDateService:UtilDateService,
+    public accountService:AccountService) {
     //this.rows = data;
     //this.temp = [...data];
     setTimeout(() => {

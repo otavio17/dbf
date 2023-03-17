@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { first } from 'rxjs/operators';
+import { AccountService } from 'src/app/services/account.service';
 import { RestService } from 'src/app/services/rest.service';
 import { UtilDateService } from 'src/app/services/util/util-date.service';
 import { CreateCompanyComponent } from './create-company/create-company.component';
@@ -32,11 +33,15 @@ export class RegisterCompaniesListComponent implements OnInit {
         },
         error => {
           console.log("teste  erro= "+JSON.stringify(error)+"");
+          alert(error.error.message);
+          if(error.error.message.includes("Token"))
+          this.accountService.logout();
         });
   }
 
   @ViewChild(RegisterCompaniesListComponent, { static: true }) table: RegisterCompaniesListComponent = Object.create(null);
-  constructor(public restService:RestService, public dialog: MatDialog, public utilDateService:UtilDateService) {
+  constructor(public restService:RestService, public dialog: MatDialog, public utilDateService:UtilDateService,
+    public accountService:AccountService) {
     setTimeout(() => {
       this.loadingIndicator = false;
     }, 1500);

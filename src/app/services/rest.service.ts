@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AccountService } from './account.service';
 
@@ -46,6 +46,13 @@ resCountryListAll() {
 
 resTransactionsListCompanieAll() {
   return this.http.get<any>(`${environment.apiUrl}/transactions/list/companie/all`,{ headers: this.headers  })
+        .pipe(map(data => {
+            return data;
+        }));
+}
+
+resListCompanieAll() {
+  return this.http.get<any>(`${environment.apiUrl}/companies/list/my`,{ headers: this.headers  })
         .pipe(map(data => {
             return data;
         }));

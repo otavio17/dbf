@@ -1,3 +1,5 @@
+import { AccountService } from './../../../services/account.service';
+import { messages } from './../../../apps/chat/chat-data';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { RestService } from 'src/app/services/rest.service';
@@ -24,30 +26,35 @@ export class TransactionReceivedListComponent  implements OnInit{
   public transactionDare: any[] = [];
 
   ngOnInit(): void {
-    this.restService.resTransactionsListCompanieAll()
+    this.restService.resListCompanieAll()
     .pipe(first())
     .subscribe(
         data => {
-        console.log("teste   data.types= "+ data.types);
-        this.companie= [{"id": 0, "name": "All", "user_transaction": 0, "companie_transaction": 1,
-          "status": 1,  "createdAt": "",  "updatedAt": ""}]
-        this.companie=  this.companie.concat( data.types);
+        console.log("resListCompanieAll = "+JSON.stringify(data));
+        this.companie= [{"id": 0, "fantasy": "All"}]
+        this.companie=  this.companie.concat( data.companies);
         this.listTransactionList();
         },
         error => {
+          
           console.log("teste  erro= "+JSON.stringify(error)+"");
+           alert(error.error.message);
+          if(error.error.message.includes("Token"))
+          this.accountService.logout();
+
         });
 
 
   }
 
 listTransactionList(){
-  this.restService.resTransactionsListUserAll()
+  this.restService.resTransactionsListCompanieAll()
   .pipe(first())
   .subscribe(
       data => {
-      this.transactionType=  [{"id":0,"name":"All","user_transaction":1,"companie_transaction":0,"status":1,"createdAt":"2023-02-01T22:54:28.000Z","updatedAt":"2023-02-01T22:54:28.000Z"}]
+      this.transactionType=  [{"id":0,"name":"All"}]
       this.transactionType=  this.transactionType.concat( data.types);
+      console.log("transactionType = "+JSON.stringify(this.transactionType));
       this.listCompanies(true);
       },
       error => {
@@ -56,7 +63,8 @@ listTransactionList(){
     }
 
   @ViewChild(TransactionReceivedListComponent, { static: true }) table: TransactionReceivedListComponent = Object.create(null);
-  constructor(public restService:RestService, public utilDateService:UtilDateService) {
+  constructor(public restService:RestService, public utilDateService:UtilDateService,
+    public accountService:AccountService ) {
     //this.rows = data;
     //this.temp = [...data];
     setTimeout(() => {
@@ -100,6 +108,7 @@ listTransactionList(){
     .pipe(first())
     .subscribe(
         data => {
+          console.log("teste sucesso "+JSON.stringify(data));
           this.rows = data.transactions;
           this.temp = [... data.transactions];
     
@@ -146,8 +155,9 @@ private typeTransacao(id:bigint){
       
     return this.transactionType[i].name;
     }
-    return "---"
+    
 }
+return "---"
 }
 
   updateValue(event: any, cell: string, rowIndex: number): void {

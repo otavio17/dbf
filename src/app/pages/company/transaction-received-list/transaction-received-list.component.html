@@ -25,7 +25,7 @@
         <mat-form-field>
           <mat-select placeholder="Companie" (selectionChange)="listCompanies(false)" [(value)]="companieId">
             <mat-option *ngFor="let companie of companie" [value]="companie.id">
-              {{ companie.name }}
+              {{ companie.fantasy }}
             </mat-option>
           </mat-select>
         </mat-form-field>
