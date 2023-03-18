@@ -23,7 +23,7 @@ export class RestService  {
   this.headers  = new HttpHeaders({
       'Access-Control-Allow-Origin': 'http://localhost:4200/',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-      'Authorization':  'bearer '+this.currentUser.token,
+      'Authorization':  'bearer '+localStorage.getItem('token'),
       "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token"});
     
 }

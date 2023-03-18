@@ -52,6 +52,7 @@ export class AccountService {
                 localStorage.setItem('user', JSON.stringify(user));
                 localStorage.setItem('username', user.name);
                 localStorage.setItem('email', username);
+                localStorage.setItem('token', user.token);
                 this.userSubject.next(user);
                 this.userSubject.complete();
                 return user;
