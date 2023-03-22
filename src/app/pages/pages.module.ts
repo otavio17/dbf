@@ -34,7 +34,7 @@ import { HomeAdmComponent } from './dashboard-components/home-adm/home-adm.compo
 import { HomeUserComponent } from './dashboard-components/home-user/home-user.component';
 import { CreateCompanyComponent } from './company/register-companies-list/create-company/create-company.component';
 import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
-
+import { NgPaymentCardModule } from 'ng-payment-card';
 @NgModule({
   imports: [
     CommonModule,
@@ -43,6 +43,7 @@ import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-de
     FlexLayoutModule,
     FormsModule,
     MatListModule,
+    NgPaymentCardModule,
     ReactiveFormsModule,
     NgxDatatableModule,
     ChartistModule,

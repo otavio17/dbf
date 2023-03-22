@@ -35,6 +35,8 @@ export class AccountService {
    
 
     login(username: string, password: string) {
+        console.log('username: '+username);
+        console.log('password: '+password);
       let data = {
         email:username,
         password:password 

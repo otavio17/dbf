@@ -1,6 +1,9 @@
-  <mat-card>
-    <mat-card-content>
-        <div fxLayout="row wrap">
+<div fxLayout="row wrap" fxLayoutAlign="center start" class="pricing-box">
+  <div fxFlex.gt-sm="40"  fxFlex="100">
+    <div class="card-group text-center" >
+   
+      <mat-card class="pricing-plan popular-plan" >
+        <div fxLayout="row wrap" style="padding: 20px;">
             <div style="margin-left:0px;" fxFlex.gt-xs="15" fxFlex="100">
                 <mat-form-field>
                   <mat-select placeholder="Moeda" (selectionChange)="listMoeda(false)" [(value)]="moedaId">
@@ -10,27 +13,27 @@
                   </mat-select>
                 </mat-form-field>
                 </div>
-            <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="100">
+            <div style="margin-left:20px;" fxFlex.gt-xs="15" fxFlex="100">
                 <mat-form-field >
                     <mat-label>Valor</mat-label>
-                    <input matInput />
+                    <input matInput type="number" />
                   </mat-form-field>
             </div>
             <mat-form-field >
                 <mat-label>Nome do Portador do cartão</mat-label>
                 <input matInput />
               </mat-form-field>
-              <mat-form-field >
-                <mat-label>Número do cartão</mat-label>
-                <input matInput />
+              <mat-form-field style="margin-right:150px;" >
+                <mat-label >Número do cartão</mat-label>
+                <input matInput type="number" #input maxlength="300" />
               </mat-form-field>
               <div style="margin-left:0px;display: flex;
-              align-items: center; " fxFlex.gt-xs="10" fxFlex="100">
+              align-items: center; " fxFlex.gt-xs="15" fxFlex="100">
              
                     <mat-label>Validade</mat-label>
           
               </div>
-              <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="100">
+              <div style="margin-left:20px;" fxFlex.gt-xs="15" fxFlex="100">
                 <mat-form-field>
                   <mat-select placeholder="Mês" (selectionChange)="listMes(false)" [(value)]="mesId">
                     <mat-option *ngFor="let mes of mes" [value]="mes.id">
@@ -52,16 +55,19 @@
                     <div style="margin-left:10px;" fxFlex.gt-xs="15" fxFlex="10">
                         <mat-form-field >
                             <mat-label>CVC</mat-label>
-                            <input matInput />
+                            <input matInput  type="number"/>
                           </mat-form-field>
                         </div>
           </div>
         <div>
          
 </div>
-<div mat-dialog-actions align="end">
-    <button style="margin-top: 30px; align-items:end;"  align="end" mat-raised-button color="warn" a  matSuffix >Confirmar Depósito</button>
+<div mat-dialog-actions align="end" style="margin: 20px;">
+    <button style="margin-top: 5px; align-items:end;"  align="end" mat-raised-button color="warn" a  matSuffix >Confirmar Depósito</button>
 
   </div>
-</mat-card-content>
 </mat-card>
+
+</div>
+</div>
+</div>
