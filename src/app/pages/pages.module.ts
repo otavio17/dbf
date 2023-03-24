@@ -1,3 +1,5 @@
+import { VisitorUserComponent } from './dashboard-components/visitor-user/visitor-user.component';
+import { SalesPurchaseUserComponent } from './dashboard-components/sales-purchase-user/sales-purchase-user.component';
 import { HomeCompanyComponent } from './dashboard-components/home-company/home-company.component';
 import { MessageComponent } from './dashboard-components/message/message.component';
 import { CommentsComponent } from './dashboard-components/comments/comments.component';
@@ -70,6 +72,7 @@ import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-de
     CreateCompanyComponent,
     VisitorComponent,
     Visitor2Component,
+    VisitorUserComponent,
     IncomeExpenssComponent,
     PostsComponent,
     NewsletterComponent,
@@ -77,6 +80,7 @@ import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-de
     ActivityComponent,
     TopCard2Component,
     SalesPurchaseComponent,
+    SalesPurchaseUserComponent,
     SalesYearlyComponent,
     HomeCompanyComponent,
     HomeAdmComponent,

@@ -9,6 +9,8 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class TopCard2Component {
   public currentUser: any;
+  public medal="home.bronze";
+
   constructor(public accountService:AccountService) {
   this.currentUser = this.accountService.userValue;
   }

@@ -1,4 +1,8 @@
 {
+  "home":{
+    "medal_bronze":"Bronze",
+    "user_level":"User Level"
+  },
   "Personal": "Personal",
   "Dashboards": "Dashboards",
   "Dashboard 1": "Dashboard 1",

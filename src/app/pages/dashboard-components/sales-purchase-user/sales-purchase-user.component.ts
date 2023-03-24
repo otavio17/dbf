@@ -1,6 +1,4 @@
-import { first } from 'rxjs/operators';
-import { RestService } from 'src/app/services/rest.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 
 import {
   ApexAxisChartSeries,
@@ -18,7 +16,9 @@ import {
   ApexNonAxisChartSeries,
   ApexResponsive,
 } from 'ng-apexcharts';
+import { first } from 'rxjs/operators';
 import { AccountService } from 'src/app/services/account.service';
+import { RestService } from 'src/app/services/rest.service';
 
 // tslint:disable-next-line - Disables all
 export interface inexpu2chartOptions {
@@ -36,22 +36,51 @@ export interface inexpu2chartOptions {
 }
 
 @Component({
-  selector: 'app-home-user',
-  templateUrl: './home-user.component.html',
-  styleUrls: ['./home-user.component.scss'],
+  selector: 'app-sales-purchase-user',
+  templateUrl: './sales-purchase-user.component.html',
+  styleUrls: ['./sales-purchase-user.component.scss'],
 })
 
-export class HomeUserComponent implements OnInit{
+export class SalesPurchaseUserComponent implements OnInit {
   @ViewChild('chart') chart: ChartComponent = Object.create(null);
   public inexpu2chartOptions: Partial<inexpu2chartOptions>;
   public currentUser: any;
   public countMy:any;
-  
-  
-  ngOnInit(): void {
-        
-                                                                             
+  public listSumMy:any;
+  public totalCountMy=0;
+  public totalListSumMy=0;
 
+  ngOnInit(): void {
+    this.restService.resTransactionsUsersListCountMy()
+    .pipe(first())
+    .subscribe(
+        data => {
+         console.log("UsersListCountMy "+JSON.stringify(data));
+         this.countMy = data.transactions[0].Total;
+         console.log("UsersListCountMy countMy "+this.countMy);
+        },
+        error => {
+          console.log("teste  erro= "+JSON.stringify(error)+"");
+          alert(error.error.message);
+          if(error.error.message.includes("Token"))
+          this.accountService.logout();
+        });
+
+        this.restService.resTransactionsUsersListSumMy()
+        .pipe(first())
+        .subscribe(
+            data => {
+              this.listSumMy =data.transactions[0];
+              this.totalListSumMy = this.listSumMy.Total;
+              this.totalListSumMy =  Math.abs(this.totalListSumMy);
+             console.log("ListSumMy "+JSON.stringify(data));
+            },
+            error => {
+              console.log("teste  erro= "+JSON.stringify(error)+"");
+              alert(error.error.message);
+              if(error.error.message.includes("Token"))
+              this.accountService.logout();
+            });
   }
 
   constructor(public accountService: AccountService, public restService:RestService) {
@@ -113,5 +142,4 @@ export class HomeUserComponent implements OnInit{
       },
     };
   }
- 
 }

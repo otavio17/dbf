@@ -37,6 +37,30 @@ resTransactionsListUserAll() {
         }));
 }
 
+resTransactionsUsersListCountMy() {
+  return this.http.get<any>(`${environment.apiUrl}/transactions/users/listCount/my`,{ headers: this.headers  })
+        .pipe(map(data => {
+            
+            return data;
+        }));
+}
+
+resTransactionsUsersListSumMy() {
+  return this.http.get<any>(`${environment.apiUrl}/transactions/users/listSum/my`,{ headers: this.headers  })
+        .pipe(map(data => {
+            
+            return data;
+        }));
+}
+
+resTransactionsUsersListGroupedMy() {
+  return this.http.get<any>(`${environment.apiUrl}/transactions/users/listGrouped/my`,{ headers: this.headers  })
+        .pipe(map(data => {
+            
+            return data;
+        }));
+}
+
 resCountryListAll() {
   return this.http.get<any>(`${environment.apiUrl}/country/list/all`,{ headers: this.headers  })
         .pipe(map(data => {

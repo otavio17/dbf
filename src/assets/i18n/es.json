@@ -1,4 +1,8 @@
 {
+  "home":{
+    "medal_bronze":"Bronce",
+    "user_level":"Nivel de Usuario"
+  },
   "Personal": "Personal",
   "Dashboards": "Cuadros de mando",
   "Dashboard 1": "Cuadros de mando 1",
