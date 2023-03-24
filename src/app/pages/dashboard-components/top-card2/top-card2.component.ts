@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
+import { MenuItems } from 'src/app/shared/menu-items/menu-items';
 
 @Component({
   selector: 'app-top-card2',
@@ -9,9 +10,8 @@ import { AccountService } from 'src/app/services/account.service';
 })
 export class TopCard2Component {
   public currentUser: any;
-  public medal="home.bronze";
-
-  constructor(public accountService:AccountService) {
+  
+  constructor(public accountService:AccountService, public menuItems: MenuItems) {
   this.currentUser = this.accountService.userValue;
   }
 }

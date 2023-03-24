@@ -20,16 +20,19 @@ export class RestService  {
 ) {
     this.currentUser = this.accountService.userValue;
     console.log("this.currentUser.token= "+this.currentUser.token);
-  this.headers  = new HttpHeaders({
-      'Access-Control-Allow-Origin': 'http://localhost:4200/',
-      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-      'Authorization':  'bearer '+localStorage.getItem('token'),
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token"});
-    
+    this.preecherHeaders();
 }
 
-
-resTransactionsListUserAll() {
+preecherHeaders(){
+  console.log("this.currentUser.token= "+localStorage.getItem('token'));
+this.headers  = new HttpHeaders({
+  'Access-Control-Allow-Origin': 'http://localhost:4200/',
+  'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+  'Authorization':  'bearer '+localStorage.getItem('token'),
+  "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-CSRF-Token"});
+}
+  resTransactionsListUserAll() {
+    this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/transactions/list/user/all`,{ headers: this.headers  })
         .pipe(map(data => {
             
@@ -38,6 +41,7 @@ resTransactionsListUserAll() {
 }
 
 resTransactionsUsersListCountMy() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/transactions/users/listCount/my`,{ headers: this.headers  })
         .pipe(map(data => {
             
@@ -46,6 +50,7 @@ resTransactionsUsersListCountMy() {
 }
 
 resTransactionsUsersListSumMy() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/transactions/users/listSum/my`,{ headers: this.headers  })
         .pipe(map(data => {
             
@@ -54,6 +59,7 @@ resTransactionsUsersListSumMy() {
 }
 
 resTransactionsUsersListGroupedMy() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/transactions/users/listGrouped/my`,{ headers: this.headers  })
         .pipe(map(data => {
             
@@ -62,6 +68,7 @@ resTransactionsUsersListGroupedMy() {
 }
 
 resCountryListAll() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/country/list/all`,{ headers: this.headers  })
         .pipe(map(data => {
             return data;
@@ -69,6 +76,7 @@ resCountryListAll() {
 }
 
 resTransactionsListCompanieAll() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/transactions/list/companie/all`,{ headers: this.headers  })
         .pipe(map(data => {
             return data;
@@ -76,6 +84,7 @@ resTransactionsListCompanieAll() {
 }
 
 resListCompanieAll() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/companies/list/my`,{ headers: this.headers  })
         .pipe(map(data => {
             return data;
@@ -83,6 +92,7 @@ resListCompanieAll() {
 }
 
 resTransactionsCompaniesListMy(init: string, finish: string, companieId:any) {
+  this.preecherHeaders();
   let data = {
     init:init,
     finish:finish,
@@ -97,6 +107,7 @@ return this.http.post<any>(`${environment.apiUrl}/transactions/companies/list/my
 
 
 resCompaniesCreate(corporateName: string, fantasy: string, tokenIntegration:string, countryId:any) {
+  this.preecherHeaders();
   let data = {
     corporateName:corporateName,
     fantasy:fantasy,
@@ -111,6 +122,7 @@ return this.http.post<any>(`${environment.apiUrl}/companies/create`,data,{ heade
 }
 
 resCompaniesListMy() {
+  this.preecherHeaders();
   return this.http.get<any>(`${environment.apiUrl}/companies/list/my`,{ headers: this.headers  })
         .pipe(map(data => {
             return data;
@@ -119,6 +131,7 @@ resCompaniesListMy() {
 
 
 resTransactionsUsersListMy(init:any, finish:any, type:any) {
+  this.preecherHeaders();
   let data = {
     init: init,
     finish: finish,

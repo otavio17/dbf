@@ -1,14 +1,11 @@
 {
-"home":{
-  "medal_bronze":"Bronze",
-  "user_level":"Nível do Usuário"
-},
-  "Personal": "persönlich",
+  "Home":"Inicial",
+  "Personal": "persönli",
   "Dashboards": "Dashboards",
   "Dashboard 1": "Instrumententafel 1",
   "Dashboard 2": "Instrumententafel 2",
-
-
+  "Transaction History":"Histórico de Transações",
+  "Make Transactions":"Fazer Transações",
   "Material Ui": "Material Ui",
   "Badge": "Abzeichen",
   "Buttons": "Tasten",

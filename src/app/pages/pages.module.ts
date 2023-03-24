@@ -36,6 +36,13 @@ import { HomeAdmComponent } from './dashboard-components/home-adm/home-adm.compo
 import { HomeUserComponent } from './dashboard-components/home-user/home-user.component';
 import { CreateCompanyComponent } from './company/register-companies-list/create-company/create-company.component';
 import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+
+export function HttpLoaderFactory(http: HttpClient): any {
+  return new TranslateHttpLoader(http, '.../assets/i18n/', '.json');
+}
 
 
 @NgModule({
@@ -54,6 +61,13 @@ import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-de
     QuillModule.forRoot(),
     MatDatepickerModule,
     NgMultiSelectDropDownModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   declarations: [
     MatIconComponent,
@@ -92,6 +106,9 @@ import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-de
     EmpDialogComponent,
     RegisterCompaniesListComponent,
     RegisterCompaniesListComponent,
+  ],
+  providers: [
+    TranslateService,
   ],
 })
 export class PagesModule {}

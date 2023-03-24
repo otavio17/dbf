@@ -1,12 +1,11 @@
 {
-  "home":{
-    "medal_bronze":"Bronce",
-    "user_level":"Nivel de Usuario"
-  },
+  "Home":"Inicial",
   "Personal": "Personal",
   "Dashboards": "Cuadros de mando",
   "Dashboard 1": "Cuadros de mando 1",
   "Dashboard 2": "Cuadros de mando 2",
+  "Transaction History":"Historial de Transacciones",
+  "Make Transactions":"Hacer Transacciones",
   "Material Ui": "Material Ui",
   "Badge": "Insignia",
   "Buttons": "Botones",

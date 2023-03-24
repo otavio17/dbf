@@ -1,14 +1,12 @@
 {
-  "home":{
-    "medal_bronze":"Bronze",
-    "user_level":"User Level"
-  },
+
   "Personal": "Personal",
   "Dashboards": "Dashboards",
   "Dashboard 1": "Dashboard 1",
   "Dashboard 2": "Dashboard 2",
   "Material Ui": "Material Ui",
   "Badge": "Badge",
+  "Transaction History":"Transaction History",
   "Buttons": "Buttons",
   "Cards": "Cards",
   "Grid List": "Grid List",

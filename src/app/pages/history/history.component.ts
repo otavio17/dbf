@@ -47,7 +47,7 @@ export class HistoryComponent  implements OnInit{
         },
         error => {
           console.log("teste  erro= "+JSON.stringify(error)+"");
-          alert(error.error.message);
+          //alert(error.error.message);
           if(error.error.message.includes("Token"))
           this.accountService.logout();
         });
