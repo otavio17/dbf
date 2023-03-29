@@ -43,7 +43,7 @@ const MENUITEMS = [
     type: 'link',
     icon: 'home',
     typeUser:-2,
-    router: '/pages/home',
+    router: '/home',
   },
   {
     state: 'historico_de_transacoes',

@@ -10,7 +10,7 @@
       <h3 class="m-0" class="medal_{{currentUser.LevelUserId}}" *ngIf="currentUser.LevelUserId === 2" >Silver </h3>
       <h3 class="m-0" class="medal_{{currentUser.LevelUserId}}" *ngIf="currentUser.LevelUserId === 3" >Gold  </h3>
       <h3 class="m-0" class="medal_{{currentUser.LevelUserId}}" *ngIf="currentUser.LevelUserId === 4" >Platinum  </h3>
-      <h5 class="text-muted m-t-0 m-b-10">User Level</h5>
+      <h5 class="text-muted m-t-0 m-b-10">{{user_lever}}</h5>
       <mat-progress-bar mode="determinate" value="10"></mat-progress-bar>
     </mat-card-content>
   </mat-card>

@@ -1,3 +1,6 @@
+import { AuthenticationModule } from './authentication/authentication.module';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AutocompleteComponent } from './forms/autocomplete/autocomplete.component';
 import { Routes } from '@angular/router';
 import { FullComponent } from './layouts/full/full.component';
 import { AppBlankComponent } from './layouts/blank/blank.component';

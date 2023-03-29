@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Injectable({ providedIn: 'root' })
@@ -16,6 +17,7 @@ export class AccountService {
 
 
     constructor(
+        private translate: TranslateService,
         private router: Router,
         private http: HttpClient
     ) {
@@ -26,11 +28,22 @@ export class AccountService {
         .set('Access-Control-Allow-Origin', '*')
         .set('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT')
         .set('Accept', 'application/json');
+        this.translate.setDefaultLang('br');
+    }
+    
+    getTranslate():TranslateService{
+        return this.translate;
     }
 
     public get userValue() {
         if(this.userSubject.value != null)
         return JSON.parse(localStorage.getItem('user')+"");
+    }
+   
+
+   async setTrans(t:any) {
+        this.translate.use(t);
+        this.translate.setDefaultLang(t);
     }
    
 

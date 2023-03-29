@@ -20,17 +20,19 @@ import { UtilRouterService } from 'src/app/services/util-router.service';
 })
 export class VerticalAppSidebarComponent implements OnDestroy {
   public config: PerfectScrollbarConfigInterface = {};
-  mobileQuery: MediaQueryList;
+  public mobileQuery: MediaQueryList;
 
   @Input() showClass: boolean = false;
   @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
-  currentUser: any;
+  
+  public currentUser: any;
   private _mobileQueryListener: () => void;
-  status = true;
-  showMenu = '';
-  itemSelect: number[] = [];
-  parentIndex = 0;
-  childIndex = 0;
+  public status = true;
+  public showMenu = '';
+  public itemSelect: number[] = [];
+  public parentIndex = 0;
+  public childIndex = 0;
+public user_lever="User Lever";
 
   addExpandClass(element: any) {
     if (element === this.showMenu) {

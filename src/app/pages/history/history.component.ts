@@ -4,6 +4,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import { AccountService } from 'src/app/services/account.service';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 export interface TransactionType {
   value: string;
@@ -28,6 +29,10 @@ export class HistoryComponent  implements OnInit{
   public loadingIndicator = true;
   public reorderable = true;
   public tType:any;
+  public final_data="Final data";
+  public initial_date="Initial date";
+  public transaction_type="Transaction Type";
+
   public transactionType: any[] = [];
   public transactionDare: any[] = [];
 
@@ -59,15 +64,21 @@ export class HistoryComponent  implements OnInit{
 
 
   @ViewChild(HistoryComponent, { static: true }) table: HistoryComponent = Object.create(null);
-  constructor(public restService:RestService, public utilDateService:UtilDateService,
+  constructor( public translate:TranslateService,public restService:RestService, public utilDateService:UtilDateService,
     public accountService:AccountService) {
     //this.rows = data;
     //this.temp = [...data];
+    this.translate.use( this.accountService.getTranslate().getDefaultLang());
+    this.accountService.getTranslate().onLangChange.subscribe((event: LangChangeEvent) => {
+      this.translate.use(event.lang);
+  });
+
     setTimeout(() => {
       this.loadingIndicator = false;
     }, 1500);
   }
 
+  
   updateFilter(v: any): void {
     const val = v;
     // filter our data
@@ -85,6 +96,7 @@ export class HistoryComponent  implements OnInit{
   listHistory(isInit:boolean) {
    // alert(deviceValue);
     //this.updateFilter(deviceValue);
+
     let dInit = "0";
     let dFinish = "0";
     let type = 0;

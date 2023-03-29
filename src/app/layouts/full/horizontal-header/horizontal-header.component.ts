@@ -108,13 +108,17 @@ export class HorizontalAppHeaderComponent {
     },
   ];
 
-  constructor(private translate: TranslateService, private routes: Router, public accountService:AccountService) {
-    translate.setDefaultLang('en');
+  constructor( private routes: Router, public accountService:AccountService) {
+   
+    console.log("es->>>>>")
+    
   }
 
   changeLanguage(lang: any): void {
-    this.translate.use(lang.code);
+    this.accountService.getTranslate().use(lang.code);
+    this.accountService.getTranslate().setDefaultLang(lang.code);
     this.selectedLanguage = lang;
+    console.log("es->>>>>   changeLanguage ")
   }
 
   logout(){

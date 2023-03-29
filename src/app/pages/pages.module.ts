@@ -37,18 +37,30 @@ import { HomeUserComponent } from './dashboard-components/home-user/home-user.co
 import { CreateCompanyComponent } from './company/register-companies-list/create-company/create-company.component';
 import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { AppComponent } from '../app.component';
+import { HttpLoaderFactory } from '../app.module';
+import { from, Observable } from 'rxjs';
 
-export function HttpLoaderFactory(http: HttpClient): any {
-  return new TranslateHttpLoader(http, '.../assets/i18n/', '.json');
+export class CustomTranslateLoader implements TranslateLoader {
+  getTranslation(lang: string): Observable<any> {
+    return from(import(`../../assets/i18n/${lang}.json`));
+  }
 }
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+  wheelSpeed: 2,
+  wheelPropagation: true,
+};
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(PagesRoutes),
+    RouterModule.forRoot(PagesRoutes, { relativeLinkResolution: 'legacy' }),
     DemoMaterialModule,
     FlexLayoutModule,
     FormsModule,
@@ -57,17 +69,17 @@ export function HttpLoaderFactory(http: HttpClient): any {
     NgxDatatableModule,
     ChartistModule,
     ChartsModule,
+    HttpClientModule,
     NgApexchartsModule,
     QuillModule.forRoot(),
-    MatDatepickerModule,
-    NgMultiSelectDropDownModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient],
-      },
+        useClass: CustomTranslateLoader ,
+      }
     }),
+    MatDatepickerModule,
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   declarations: [
     MatIconComponent,
@@ -108,7 +120,12 @@ export function HttpLoaderFactory(http: HttpClient): any {
     RegisterCompaniesListComponent,
   ],
   providers: [
-    TranslateService,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    TranslateService
   ],
+
 })
 export class PagesModule {}

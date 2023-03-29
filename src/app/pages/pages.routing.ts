@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { TransactionReceivedListComponent } from './company/transaction-received-list/transaction-received-list.component';
 import { CreditCardDepositComponent } from './credit-card-deposit/credit-card-deposit.component';
 
+var transaction_history = 'Transaction History';
 export const PagesRoutes: Routes = [
   {
     path: '',
@@ -43,7 +44,7 @@ export const PagesRoutes: Routes = [
         path: 'history',
         component: HistoryComponent,
         data: {
-          title: 'Transaction History',
+          title: transaction_history ,
         },
       },
       {

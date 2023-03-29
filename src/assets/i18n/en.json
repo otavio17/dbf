@@ -1,6 +1,12 @@
 {
 
   "Personal": "Personal",
+
+  "User Lever":"User Lever",
+  "Final data":"Final data",
+  "Initial date":"Initial date",
+  "Transaction Type":"Transaction Type",
+
   "Dashboards": "Dashboards",
   "Dashboard 1": "Dashboard 1",
   "Dashboard 2": "Dashboard 2",
